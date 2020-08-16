@@ -1,1 +1,1 @@
-# edabit-challenges
+### Algorithm Challenges
