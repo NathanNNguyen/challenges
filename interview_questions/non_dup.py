@@ -22,8 +22,7 @@ def singleNumber(nums):
             cache[i] += 1
     for item in cache.items():
         if item[1] == 1:
-            result = item[0]
-            return result
+            return item[0]
     return None
 
 
