@@ -35,28 +35,53 @@ class ListNode(object):
         self.next = None
 
 
+# class Solution:
+#     def addTwoNumbers(self, l1, l2, c=0):
+#         cur_1, cur_2 = l1, l2
+#         r = []
+#         tenth = 0
+#         while cur_1 != None:
+#             total = 0
+#             if tenth:
+#                 total += cur_1.val + cur_2.val + tenth
+#             else:
+#                 total += cur_1.val + cur_2.val
+#             if total >= 10:
+#                 total = str(total)
+#                 single = total[-1]
+#                 tenth = total[0]
+#                 total = int(single)
+#             if int(tenth):
+#                 tenth = int(tenth)
+#             cur_1, cur_2 = cur_1.next, cur_2.next
+#             r.append(total)
+#         l3, l3.next, l3.next.next = ListNode(
+#             r[0]), ListNode(r[1]), ListNode(r[2])
+#         return l3
+
+
 class Solution:
-    def addTwoNumbers(self, l1, l2, c=0):
-        cur_1, cur_2 = l1, l2
-        r = []
-        tenth = 0
-        while cur_1 != None:
-            total = 0
-            if tenth:
-                total += cur_1.val + cur_2.val + tenth
-            else:
-                total += cur_1.val + cur_2.val
-            if total >= 10:
-                total = str(total)
-                single = total[-1]
-                tenth = total[0]
-                total = int(single)
-            if int(tenth):
-                tenth = int(tenth)
-            cur_1, cur_2 = cur_1.next, cur_2.next
-            r.append(total)
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        r1 = ''
+        current = l1
+        while current != None:
+            r1 += str(current.val)
+            current = current.next
+
+        r2 = ''
+        current = l2
+        while current != None:
+            r2 += str(current.val)
+            current = current.next
+
+        r1 = int(r1[::-1])
+        r2 = int(r2[::-1])
+
+        result = r1 + r2
+        res = [int(x) for x in str(result)[::-1]]
+
         l3, l3.next, l3.next.next = ListNode(
-            r[0]), ListNode(r[1]), ListNode(r[2])
+            res[0]), ListNode(res[1]), ListNode(res[2])
         return l3
 
 
