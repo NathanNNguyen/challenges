@@ -25,7 +25,7 @@
 # 1 <= nums[i] <= 10^3
 
 class Solution:
-    def shuffle(self, nums: List[int], n: int) -> List[int]:
+    def shuffle(self, nums, n):
         # lets make a counter
         counter = n
         result = []
@@ -50,3 +50,10 @@ class Solution:
                     # increase the counter
                     counter += 1
                 return result
+
+
+nums = [1, 1, 2, 2]
+n = 2
+# nums = [1, 7]
+# n = 1
+print(Solution().shuffle(nums, n))
