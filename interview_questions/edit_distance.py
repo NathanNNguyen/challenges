@@ -62,4 +62,7 @@ s2 = 'sitting'
 s1 = 'kiting'
 s2 = 'biting'
 
+s1 = 'nums'
+s2 = 'fort'
+
 print(distance(s1, s2))
