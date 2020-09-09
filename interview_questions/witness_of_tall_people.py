@@ -19,6 +19,7 @@
 # print witnesses([3, 6, 3, 4, 1])
 # # 3
 
+# first pass solution
 def witnesses(heights):
     # make a list to keep track of which index
     # can't see the crim scene
@@ -49,6 +50,22 @@ def witnesses(heights):
         heights.pop(i)
 
     # return the length as of how many are witnesses
+    return len(heights)
+
+
+# double for loop solution
+def witnesses(heights):
+    r = []
+    count = 1
+    for i in range(len(heights)):
+        for j in heights[count:]:
+            if heights[i] < j:
+                r.append(i)
+                break
+        count += 1
+    for i in r[::-1]:
+        heights.pop(i)
+
     return len(heights)
 
 
